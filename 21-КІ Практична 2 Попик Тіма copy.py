@@ -1,13 +1,30 @@
-a = 'Попик'
-b = 'Тіма'
+a = 'Тіма'
+b = 'Попик'
 c = 16
-list1=[a, b, c]
-print(list1)
-list2=[type(a), type(b), type(c)]
-print(list2)
-if type(a) == type(b) == type(c):
-    print('Найчастіший тип данних str' )
-elif type(a) == type(b) != type(c):
-    print('Найчастіший тип данних str' )
-else:
-    print('Найчастіший тип данних int')
+A = type(a)
+B = type(b)
+C = type(c)
+list1 = [a, b, c]
+list2 = [A, B, C]
+list_string = []
+list_int = []
+
+if A == str:
+    list_string.append(A)
+elif A == int:
+    list_int.append(A)
+
+if B == str:
+    list_string.append(B)
+elif B == int:
+    list_int.append(B)  
+
+if C == str:
+    list_string.append(C)
+elif C == int:
+    list_int.append(C)
+
+if len(list_string) > len(list_int):
+    print('Тип даних str переважає')
+elif len(list_int) > len(list_string):
+    print('Тип даних int переважає')
