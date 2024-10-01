@@ -4,8 +4,13 @@ dict1 = {1: 'oma',
          4: 'uma'}
 print(dict1)
 
-dict2 = {1: type(dict1[1]),
-         2:type(dict1[2]),
-         3:type(dict1[3]),
-         4:type(dict1[4])}
-print(dict2)
+type_dict ={}
+for key in dict1:
+    box = dict1[key]
+    if type(box) == dict:
+        for my_key in box:
+            my_box = type(box[my_key])
+            type_dict[my_key] = type[my_box]
+        else:
+            type_dict[key] = type(box)
+print(type_dict)    
