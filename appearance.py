@@ -1,4 +1,5 @@
 from telebot import types
+import telebot 
 from anekdots import send_anekdot
 
 def register_handlers(bot):
