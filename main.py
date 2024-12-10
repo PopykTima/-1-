@@ -1,22 +1,16 @@
-import os
 import telebot
-from dotenv import load_dotenv
 from appearance import register_handlers
+from deco import log_start
+from get_token import get_token
 
-load_dotenv()
-TOKEN = os.getenv("TOKEN")
-bot = telebot.TeleBot(TOKEN)
-
-def log_start(func):
-    def wrapper():
-        print("Бот запущено!")
-        func()
-    return wrapper
 
 @log_start
 def main():
+    API_TOKEN = get_token()
+    bot = telebot.TeleBot(API_TOKEN)
     register_handlers(bot) 
     bot.polling()
+
 
 if __name__ == "__main__":
     main()
