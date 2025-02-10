@@ -1,0 +1,24 @@
+from datetime import datetime
+
+
+class Popyk:
+    def __init__(self, name=None, surname=None, birth_year=None):
+        self.name = name
+        self.surname = surname
+        self.birth_year = birth_year
+
+    def determine_course(self):
+        if self.birth_year is None:
+            return None
+        current_year = datetime.now().year
+        age = current_year - self.birth_year
+        course = age - 17 if age >= 17 else 0
+        return max(course, 0) if course <= 6 else "Graduate"
+
+    def get_name_list(self):
+        return [self.name, self.surname] if self.name and self.surname else []
+
+
+student = Popyk("Tima", "Popik", 2008)
+print(student.determine_course())
+print(student.get_name_list())
