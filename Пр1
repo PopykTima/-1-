@@ -1,5 +1,5 @@
 class Tima:
-def init(self, first_name=None, last_name=None, birth_year=None):
+def __init__(self, first_name=None, last_name=None, birth_year=None):
 self.first_name = first_name if first_name is not None else None
 self.last_name = last_name if last_name is not None else None
 self.birth_year = birth_year if birth_year is not None else None
