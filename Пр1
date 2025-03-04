@@ -1,24 +1,21 @@
-from datetime import datetime
+class Tima:
+def init(self, first_name=None, last_name=None, birth_year=None):
+self.first_name = first_name if first_name is not None else None
+self.last_name = last_name if last_name is not None else None
+self.birth_year = birth_year if birth_year is not None else None
 
+def get_course(self):  
+    if self.birth_year is None:  
+        return None  
+    current_year = 2025  
+    start_year = 2023  
+    course = current_year - start_year  
+    return min(course, 4)    
 
-class Popyk:
-    def __init__(self, name=None, surname=None, birth_year=None):
-        self.name = name
-        self.surname = surname
-        self.birth_year = birth_year
+def get_name_list(self):  
+    return [self.first_name, self.last_name]
 
-    def determine_course(self):
-        if self.birth_year is None:
-            return None
-        current_year = datetime.now().year
-        age = current_year - self.birth_year
-        course = age - 17 if age >= 17 else 0
-        return max(course, 0) if course <= 6 else "Graduate"
+tima = Tima("Тимофій", "Попик", 2008)
 
-    def get_name_list(self):
-        return [self.name, self.surname] if self.name and self.surname else []
-
-
-student = Popyk("Tima", "Popyk", 2008)
-print(student.determine_course())
-print(student.get_name_list())
+print(tima.get_course())
+print(tima.get_name_list())
