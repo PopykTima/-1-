@@ -19,6 +19,6 @@ class Popyk:
         return [self.name, self.surname] if self.name and self.surname else []
 
 
-student = Popyk("Tima", "Popik", 2008)
+student = Popyk("Tima", "Popyk", 2008)
 print(student.determine_course())
 print(student.get_name_list())
